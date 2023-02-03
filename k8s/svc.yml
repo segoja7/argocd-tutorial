@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: servicio-tutorial-server
+  name: tutorial-server
 spec:
   type: LoadBalancer
   selector:

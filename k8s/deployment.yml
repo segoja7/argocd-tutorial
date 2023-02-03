@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tutorial-server
+  labels:
+    app: tutorial-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tutorial-server
+  template:
+    metadata:
+      labels:
+        app: tutorial-server
+    spec:
+      containers:
+        - name: tutorial-server
+          image: ghcr.io/misw-4301-desarrollo-apps-en-la-nube/argocd-tutorial:1.0
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 4000
+          imagePullPolicy: Always

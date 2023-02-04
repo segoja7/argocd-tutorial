@@ -1,9 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tutorial-server
   labels:
     app: tutorial-server
+    app.kubernetes.io/instance: argocd-tutorial
+  name: tutorial-server
   namespace: default
 spec:
   replicas: 1
@@ -16,15 +17,15 @@ spec:
         app: tutorial-server
     spec:
       containers:
-        - name: tutorial-server
-          image: ghcr.io/misw-4301-desarrollo-apps-en-la-nube/argocd-tutorial:1.0
-          resources:
-            limits:
-              cpu: "500m"
-              memory: "128Mi"
-            requests:
-              cpu: "250m"
-              memory: "64Mi"
+        - image: 'ghcr.io/misw-4301-desarrollo-apps-en-la-nube/argocd-tutorial:1.0'
+          imagePullPolicy: Always
+          name: tutorial-server
           ports:
             - containerPort: 8080
-          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: 500m
+              memory: 128Mi
+            requests:
+              cpu: 250m
+              memory: 64Mi

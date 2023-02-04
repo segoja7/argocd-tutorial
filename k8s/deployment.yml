@@ -4,6 +4,7 @@ metadata:
   name: tutorial-server
   labels:
     app: tutorial-server
+  namespace: default
 spec:
   replicas: 1
   selector:

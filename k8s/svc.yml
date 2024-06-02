@@ -4,10 +4,10 @@ metadata:
   name: tutorial-server
   namespace: default
 spec:
-  type: LoadBalancer
+#  type: LoadBalancer
   selector:
     app: tutorial-server
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80

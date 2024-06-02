@@ -7,7 +7,7 @@ metadata:
   name: tutorial-server
   namespace: default
 spec:
-  replicas: 2
+  replicas: 0
   selector:
     matchLabels:
       app: tutorial-server

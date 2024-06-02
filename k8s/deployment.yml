@@ -17,11 +17,12 @@ spec:
         app: tutorial-server
     spec:
       containers:
-        - image: 'ghcr.io/misw-4301-desarrollo-apps-en-la-nube/argocd-tutorial:3.0'
+        - image: 'nginx:latest'
+#        - image: 'ghcr.io/misw-4301-desarrollo-apps-en-la-nube/argocd-tutorial:3.0'
           imagePullPolicy: Always
           name: tutorial-server
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           resources:
             limits:
               cpu: 250m
